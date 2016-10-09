@@ -36,7 +36,14 @@
             android:layout_gravity="center"
             android:gravity="center" />
 
-        <TextView
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:progressDrawable="@drawable/circular_progress_view" />
+
+            <TextView
             android:text="@string/cadastrelogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

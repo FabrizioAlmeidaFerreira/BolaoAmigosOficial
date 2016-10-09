@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.fabrizio.bolaoamigosoficial.users.UserSenhaCheck;
@@ -21,7 +22,11 @@ public class CadastreseActivity extends AppCompatActivity {
 
     EditText etLoginUsuario,etSenhaUsuario;
     Button btnEnviaCadastro;
+    ProgressBar mProgressBar;
     private String Login,Senha;
+
+    protected boolean mbActive;
+    protected static final int TIMER_RUNTIME = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,8 @@ public class CadastreseActivity extends AppCompatActivity {
 
         btnEnviaCadastro = (Button) findViewById(R.id.btnEnviarCadastro);
 
-
-
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mProgressBar.setVisibility(View.GONE);
 
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(cartolaService.BASE_URL)
@@ -49,7 +54,12 @@ public class CadastreseActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Login = etLoginUsuario.getText().toString();
+                etLoginUsuario.setVisibility(View.GONE);
                 Senha = etSenhaUsuario.getText().toString();
+                etSenhaUsuario.setVisibility(View.GONE);
+
+
+                mProgressBar.setVisibility(View.VISIBLE);
 
                 if( Login.length() > 2 && Senha.length() > 2 && !Login.equals("") && !Senha.equals("") ) {
                     Call<UserSenhaCheck> userSenhaCheckCall = service.cadastresse("enviado", Senha, Login);
@@ -58,14 +68,38 @@ public class CadastreseActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<UserSenhaCheck> call, Response<UserSenhaCheck> response) {
 
-                            UserSenhaCheck userSenhaCheck = response.body();
+                            final UserSenhaCheck userSenhaCheck = response.body();
 
                             etLoginUsuario.setHint(userSenhaCheck.user);
 
-                            if (userSenhaCheck.user.equals("Success")) {
-                                startActivity(intent);
-                                finish();
-                            }
+                            final Thread Carregando = new Thread(){
+                                @Override
+                                public void run(){
+                                    mbActive = true;
+                                    try {
+                                        int wited = 0;
+                                        while (mbActive && (wited < TIMER_RUNTIME)){
+                                            sleep(200);
+                                            if (mbActive){
+                                                wited += 200;
+                                                updateProgressBar(wited);
+                                            }
+                                        }
+
+                                    }catch (Exception e){
+
+                                    }finally {
+                                        if (userSenhaCheck.user.equals("Success")) {
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    }
+                                }
+                            };
+                            Carregando.start();
+
+
+
                         }
 
                         @Override
@@ -75,11 +109,22 @@ public class CadastreseActivity extends AppCompatActivity {
                         }
                     });
                 }else {
+
                     if( Login.length() <= 2  )  Toast.makeText(CadastreseActivity.this, "Ops seu login deve conter no minimo 4 letras", Toast.LENGTH_LONG).show();
                     else if( Senha.length() <= 2)Toast.makeText(CadastreseActivity.this, "Ops sua senha deve conter no minimo 4 letras", Toast.LENGTH_LONG).show();
+                    mProgressBar.setVisibility(View.GONE);
+                    etLoginUsuario.setVisibility(View.VISIBLE);
+                    etSenhaUsuario.setVisibility(View.VISIBLE);
                 }
             }
         });
 
     }
+
+    public void updateProgressBar(final int timePassed){
+        if (null != mProgressBar){
+            final int progress = mProgressBar.getMax() * timePassed / TIMER_RUNTIME;
+        }
+    }
+
 }
