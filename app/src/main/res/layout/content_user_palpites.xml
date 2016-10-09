@@ -1,0 +1,2420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="2dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="2dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.fabrizio.bolaoamigosoficial.UserPalpitesActivity"
+    tools:showIn="@layout/app_bar_papites_user"
+    android:background="@android:color/black">
+
+    <!-- A RecyclerView with some commonly used attributes -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFabshadow">
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvRodadaAtual"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_palpites"
+                    android:scrollbars="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/background_light"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="6dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="24px">
+
+                <!--android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_partidas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:scrollbars="vertical" /-->
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+                android:background="@drawable/custom_drop_shadow_drawable"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:backgroundTint="@android:color/background_light">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px"
+                android:background="@android:color/background_light">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA1"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome1"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar1"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView1"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar1"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome1"
+                    android:layout_weight="0.04"
+                    android:gravity="end"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB1"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA1"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB1"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida1"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:textSize="10sp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp" />
+
+                <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                    android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                    android:textColor="@android:color/background_light"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                    android:textSize="10sp"
+                android:id="@+id/tvLocalPartida1"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:layout_height="14dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.04"
+                    android:background="@android:color/background_light"
+                    android:layout_margin="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:text="Seu Palpite"
+                        android:id="@+id/tvPalpitStaus1"
+                        android:background="@drawable/rounded_corner"
+                        android:layout_width="120dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textStyle="normal|italic"
+                        android:layout_height="14dp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8px"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_marginBottom="6dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:id="@+id/ivTimeAUser1"
+                            android:layout_height="20dp"
+                            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+                        <EditText
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:ems="10"
+                            android:id="@+id/etPalpiteA1"
+                            android:background="@android:drawable/editbox_dropdown_light_frame"
+                            android:gravity="center_vertical|center"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="?android:attr/textColorHint"
+                            android:textColorHighlight="@android:color/black"
+                            android:editable="true"
+                            android:enabled="true"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:text="X"
+                            android:id="@+id/tvx1"
+                            android:layout_height="24dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_width="28dp" />
+
+                        <EditText
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:ems="10"
+                            android:id="@+id/etPalpiteB1"
+                            android:background="@android:drawable/editbox_dropdown_light_frame"
+                            android:gravity="center_vertical|center"
+                            android:textColor="?android:attr/colorForeground"
+                            android:textColorHint="?android:attr/textColorHint"
+                            android:editable="true"
+                            android:enabled="true"
+                            android:inputType="number" />
+
+                        <ImageView
+                            android:id="@+id/ivTimeBUser1"
+                            android:layout_width="30dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@android:drawable/ic_menu_gallery" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/view1"
+                android:background="@color/colorAccent"
+                android:layout_height="12dp"  />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA2"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome2"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar2"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/tvx222"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar2"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome2"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB2"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA2"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black"  />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB2"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black"  />
+                </LinearLayout>
+
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="match_parent"
+                    android:id="@+id/tvDataPartida2"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/background_light"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:layout_height="14dp"
+                    android:textSize="10sp" />
+
+                <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida2" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus2"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser2"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA2"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView4222"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB2"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser2"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view2"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA3"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome3"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar3"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView233"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar3"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome3"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB3"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA3"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB3"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida3"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida3" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus3"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser3"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA3"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView4334"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB3"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser3"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view3"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA4"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome4"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar4"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView2444"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar4"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome4"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB4"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA4"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black"  />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB4"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida4"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida4" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus4"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser4"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA4"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView4ttt"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB4"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser4"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view4"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA5"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome5"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar5"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView2hhh"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar5"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome5"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB5"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA5"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black"  />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB5"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida5"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida5" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus5"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser5"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA5"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView45hjj"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB5"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser5"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view5"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA6"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome6"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar6"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView2jj"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar6"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome6"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB6"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA6"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB6"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida6"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida6" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus6"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser6"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA6"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView46jjk"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB6"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser6"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view6"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA7"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome7"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar7"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView27ij"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar7"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome7"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB7"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA7"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB7"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida7"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida7" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus7"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser7"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA7"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView47kj"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB7"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser7"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view7"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA8"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome8"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar8"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView28kll"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar8"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome8"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB8"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA8"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB8"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida8"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida8" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus8"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser8"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA8"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView48lkl"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB8"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser8"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view8"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA9"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome9"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar9"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView29llo"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar9"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome9"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB9"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA9"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB9"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida9"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida9" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus9"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser9"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA9"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView49oo"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB9"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser9"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view9"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24px">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeA10"
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeANome10"
+                    android:layout_width="100dp"
+                    android:layout_weight="0.04"
+                    android:layout_gravity="left"
+                    android:gravity="top"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tvTimeAPlacar10"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="X"
+                    android:layout_width="28dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/textView21"
+                    android:layout_weight="0.04"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTimeBPlacar10"
+                    android:layout_weight="0.04"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_dropdown_light_frame"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="Carregando..."
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTimeBNome10"
+                    android:layout_weight="0.04"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivTimeB10"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeA10"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:paddingLeft="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAproveitamentoTimeB10"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingRight="26px"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:id="@+id/tvDataPartida10"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:layout_height="14dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:text="Carregando..."
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_weight="0.04"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="?android:attr/textColorPrimaryInverseNoDisable"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textSize="10sp"
+                android:id="@+id/tvLocalPartida10" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:background="@android:color/background_light"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:text="Seu Palpite"
+                    android:id="@+id/tvPalpitStaus10"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_width="120dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="10sp"
+                    android:textStyle="normal|italic"
+                    android:layout_height="14dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeAUser10"
+                        android:layout_height="20dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteA10"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:textColorHighlight="@android:color/black"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:text="X"
+                        android:id="@+id/textView4"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="28dp" />
+
+                    <EditText
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:ems="10"
+                        android:id="@+id/etPalpiteB10"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:gravity="center_vertical|center"
+                        android:textColor="?android:attr/colorForeground"
+                        android:textColorHint="?android:attr/textColorHint"
+                        android:editable="true"
+                        android:enabled="true"
+                        android:inputType="number" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivTimeBUser10"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    class="android.support.v4.widget.Space"
+                    android:id="@+id/view10"
+                    android:background="@color/colorAccent"
+                    android:layout_height="12dp"  />
+
+
+
+        </LinearLayout>
+
+
+
+            <ImageButton
+                android:id="@+id/btnWhatsappShare"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/whatsbtn"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

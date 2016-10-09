@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cadastrese"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.fabrizio.bolaoamigosoficial.CadastreseActivity">
+
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="218dp"
+            android:layout_height="99dp"
+            app:srcCompat="@drawable/logo"
+            android:id="@+id/imageView3"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:text="@string/cadastresseinstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView8"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <TextView
+            android:text="@string/cadastrelogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etLoginUsuario"
+            android:background="@drawable/custom_drop_shadow_drawable"
+            android:paddingLeft="8dp"
+            android:textAlignment="center"
+            android:layout_height="52dp" />
+
+        <TextView
+            android:text="@string/cadastresenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etSenhaUsuario"
+            android:background="@drawable/custom_drop_shadow_drawable"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:layout_height="52dp" />
+
+            <Button
+                android:text="@string/btnEnviaCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/btnEnviarCadastro"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="90dp"
+                android:background="@drawable/btnclick" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:background="?attr/colorAccent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:background="@android:color/background_light"
+        android:layout_margin="4px"
+        android:padding="12px">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="56dp"
+                app:srcCompat="@drawable/football"
+                android:id="@+id/ivUsuario"
+                android:layout_weight="1"
+                android:foregroundGravity="center" />
+
+            <TextView
+                android:text="@string/carregando"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvUserNome"
+                android:gravity="left"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:paddingTop="16px"
+                style="@style/Base.Animation.AppCompat.Dialog"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA1"
+                        android:foregroundGravity="center"
+                        android:layout_width="30px"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA1"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/textView11"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB1"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB1"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA2"
+                        android:layout_width="30px"
+                        android:foregroundGravity="center"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA2"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx2"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB2"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB2"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA3"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA3"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx3"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB3"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB3"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA4"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA4"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx4"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB4"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB4"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA5"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA5"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx5"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB5"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB5"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14px">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA6"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA6"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx6"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaB6"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:layout_width="28px"
+                        android:layout_height="28px"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB6"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA7"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA7"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_height="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx7"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_height="@dimen/fab"
+                        android:id="@+id/tvPalpiteTimaB7"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB7"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA8"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA8"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_height="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx8"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_height="@dimen/fab"
+                        android:id="@+id/tvPalpiteTimaB8"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB8"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA9"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA9"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_height="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx9"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_height="@dimen/fab"
+                        android:id="@+id/tvPalpiteTimaB9"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB9"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeA10"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvPalpiteTimaA10"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_height="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="4px" />
+
+                    <TextView
+                        android:text="@string/x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:id="@+id/tvx10"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_height="@dimen/fab"
+                        android:id="@+id/tvPalpiteTimaB10"
+                        android:gravity="center"
+                        android:background="@android:drawable/editbox_dropdown_light_frame"
+                        android:layout_width="@dimen/fab"
+                        android:layout_gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginRight="4px" />
+
+                    <ImageView
+                        app:srcCompat="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/ivPalpiteTimeB10"
+                        android:layout_width="30px"
+                        android:layout_height="30px"
+                        android:foregroundGravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"></LinearLayout>
+
+</LinearLayout>

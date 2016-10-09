@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BolaoAmigosOficial</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_palpites">PalpitesActivity</string>
+    <string name="bem_vindo">Bem vindo ao app Bolão dos amigos \n Logo abaixo você pode fazer seu login. \n Se você ainda não se cadastrou então não perca tempo cadastre-se!!!</string>
+    <string name="digite_nome">Digite seu nome aqui…</string>
+    <string name="digitesenha">Digite sua senha aqui…</string>
+    <string name="login">Fazer login</string>
+    <string name="conectando">Conectando com servidor aguarde!!!</string>
+    <string name="carregando">Carregando…</string>
+    <string name="cadastrese">Cadastre-se gratuitamente</string>
+    <string name="digitelogin">Digite seu login de usuário abaixo :</string>
+    <string name="x">X</string>
+    <string name="title_activity_user_palpites">UserPalpitesActivity</string>
+    <string name="btnEnviaCadastro">Enviar cadastro</string>
+    <string name="cadastrelogin">Digite seu login de usuário abaixo : \n (Deve conter minimo 4 letras com ou sem simbolos)</string>
+    <string name="cadastresenha">Digite sua senha aqui… \n (Deve conter minimo 4 letras com ou sem simbolos)</string>
+    <string name="cadastresseinstructions">Ola bem vindo ao Bolão dos amigos, se você chegou até aqui você quer se cadastrar correto. \n Então vamos lá abaixo você deverá
+        escolher um nome de usúario e uma senha, depois você deverá usar este nome de usuário e senha para entrar no aplicativo. \n Atenção o aplicativo ´so pedirá uma vez
+    o nome de usuário e senha depois não será nescessário, a não ser que você reinstale o aplicativo</string>
+</resources>
