@@ -92,7 +92,6 @@ public class CadastreseActivity extends AppCompatActivity {
                                             sleep(200);
                                             if (mbActive){
                                                 wited += 200;
-                                                updateProgressBar(wited);
                                             }
                                         }
 
@@ -132,12 +131,6 @@ public class CadastreseActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void updateProgressBar(final int timePassed){
-        if (null != mProgressBar){
-            final int progress = mProgressBar.getMax() * timePassed / TIMER_RUNTIME;
-        }
     }
 
 }
