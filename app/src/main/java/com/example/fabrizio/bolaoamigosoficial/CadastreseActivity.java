@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fabrizio.bolaoamigosoficial.users.UserSenhaCheck;
@@ -21,6 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CadastreseActivity extends AppCompatActivity {
 
     EditText etLoginUsuario,etSenhaUsuario;
+    TextView textView8,textView9,textView10;
     Button btnEnviaCadastro;
     ProgressBar mProgressBar;
     private String Login,Senha;
@@ -32,6 +34,10 @@ public class CadastreseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrese);
+
+        textView8 = (TextView) findViewById(R.id.textView8);
+        textView9 = (TextView) findViewById(R.id.textView9);
+        textView10 = (TextView) findViewById(R.id.textView10);
 
         etLoginUsuario = (EditText) findViewById(R.id.etLoginUsuario);
         etSenhaUsuario = (EditText) findViewById(R.id.etSenhaUsuario);
@@ -52,6 +58,10 @@ public class CadastreseActivity extends AppCompatActivity {
         btnEnviaCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                textView8.setVisibility(View.GONE);
+                textView9.setVisibility(View.GONE);
+                textView10.setVisibility(View.GONE);
 
                 Login = etLoginUsuario.getText().toString();
                 etLoginUsuario.setVisibility(View.GONE);
@@ -115,6 +125,9 @@ public class CadastreseActivity extends AppCompatActivity {
                     mProgressBar.setVisibility(View.GONE);
                     etLoginUsuario.setVisibility(View.VISIBLE);
                     etSenhaUsuario.setVisibility(View.VISIBLE);
+                    textView8.setVisibility(View.VISIBLE);
+                    textView9.setVisibility(View.VISIBLE);
+                    textView10.setVisibility(View.VISIBLE);
                 }
             }
         });
