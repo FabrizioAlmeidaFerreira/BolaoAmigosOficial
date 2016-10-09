@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface cartolaService {
 
-    public static final String BASE_URL = "http://bolaoamigos.tempsite.ws/";
+    public static final String BASE_URL = "{Sua API}";
 
     @GET("api_cartola_refeito.php")
     Call<CartolaCatalog> listPartidas();
